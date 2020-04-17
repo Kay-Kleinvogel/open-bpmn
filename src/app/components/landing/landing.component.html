@@ -1,0 +1,20 @@
+<div class="landing-component">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Welcome to open BPMN</mat-card-title>
+      <mat-card-subtitle>What do you want to do?</mat-card-subtitle>
+    </mat-card-header>
+    <div class="mat-card-content">
+      <div class="mat-list">
+        <div class="mat-list-item">
+          <button mat-button (click)="createDiagram()">
+            New Project
+          </button>
+        </div>
+        <div class="mat-list-item">
+          <button mat-button (click)="openFile()">Open Project</button>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>
