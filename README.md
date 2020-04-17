@@ -48,9 +48,9 @@ Voila! You can use your Angular + Electron app in a local development environmen
 
 ## Built With
 
-- [Angular](https://angular.io/) - The web framework used
-- [ElectronJS](https://www.electronjs.org/) - creating the desktop applications
-- [bpmn.io](https://bpmn.io/) - Used as the bpmn engine
+-   [Angular](https://angular.io/) - The web framework used
+-   [ElectronJS](https://www.electronjs.org/) - creating the desktop applications
+-   [bpmn.io](https://bpmn.io/) - Used as the bpmn engine
 
 ## Versioning
 
@@ -58,7 +58,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-- **Kay Kleinvogel** - Owner of repository - [Ironlors](https://github.com/Ironlors)
+-   **Kay Kleinvogel** - Owner of repository - [Ironlors](https://github.com/Ironlors)
 
 See also the list of [contributors](https://github.com/Ironlors/open-bpmn/contributors) who participated in this project.
 
