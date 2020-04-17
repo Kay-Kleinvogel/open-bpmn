@@ -1,3 +1,7 @@
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+[![GitHub Release](https://img.shields.io/github/release/tterb/PlayMusic.svg?style=flat)]()  
+[![Twitter Follow](https://img.shields.io/twitter/follow/bstevensondev.svg?style=social)](https://twitter.com/KayKleinvogel)
+
 # Open BPMN
 
 Open BPMN is an open source editor for BPMN diagrams. Its goal is to provice a solution that can be used by everyone (no matter which plattform) for free.
