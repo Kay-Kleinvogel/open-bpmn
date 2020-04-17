@@ -1,5 +1,5 @@
-[[![MIT License](https://img.shields.io/apm/l/open-bpmn.svg?)](https://github.com/Ironlors/open-bpmn/blob/master/LICENSE.md)](https://img.shields.io/github/license/Ironlors/open-bpmn)
-[![GitHub Release](https://img.shields.io/github/release/Ironlors/open-bpmn.svg?style=flat)]()
+![license](https://img.shields.io/github/license/Ironlors/open-bpmn)
+![version](https://img.shields.io/github/v/release/Ironlors/open-bpmn?include_prereleases)
 
 # Open BPMN
 
