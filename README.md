@@ -1,6 +1,5 @@
-[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
-[![GitHub Release](https://img.shields.io/github/release/tterb/PlayMusic.svg?style=flat)]()  
-[![Twitter Follow](https://img.shields.io/twitter/follow/bstevensondev.svg?style=social)](https://twitter.com/KayKleinvogel)
+[[![MIT License](https://img.shields.io/apm/l/open-bpmn.svg?)](https://github.com/Ironlors/open-bpmn/blob/master/LICENSE.md)](https://img.shields.io/github/license/Ironlors/open-bpmn)
+[![GitHub Release](https://img.shields.io/github/release/Ironlors/open-bpmn.svg?style=flat)]()
 
 # Open BPMN
 
