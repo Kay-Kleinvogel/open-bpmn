@@ -9,7 +9,7 @@ import {
 
 import * as BpmnJS from "bpmn-js/dist/bpmn-modeler.development.js";
 import { Router } from "@angular/router";
-import { FileService } from "../../core/services";
+import { FileService, EventEmitterService } from "../../core/services";
 const ipcRenderer = require("electron").ipcRenderer;
 
 @Component({
@@ -22,7 +22,11 @@ export class BpmnEditorComponent implements AfterContentInit, OnDestroy {
 
   @ViewChild("canvas", { static: true }) private el: ElementRef;
 
-  constructor(private fileService: FileService, private ngZone: NgZone) {
+  constructor(
+    private fileService: FileService,
+    private ngZone: NgZone,
+    private eventEmitterService: EventEmitterService
+  ) {
     // testing if it gets the current data with the router
     this.viewer.importXML(this.fileService.getCurrentContent(), (err) => {
       if (err) {
@@ -39,7 +43,16 @@ export class BpmnEditorComponent implements AfterContentInit, OnDestroy {
         this.fileService.setCurrentPath(null);
         this.saveFile();
       });
+      return "done";
     });
+
+    if (this.eventEmitterService.subsVar == undefined) {
+      this.eventEmitterService.subsVar = this.eventEmitterService.invokeSaveFile.subscribe(
+        () => {
+          this.saveFile();
+        }
+      );
+    }
   }
 
   ngAfterContentInit(): void {

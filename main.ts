@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu } = require("electron");
+const { app, BrowserWindow, Menu, dialog } = require("electron");
 const url = require("url");
 const path = require("path");
 
@@ -28,6 +28,19 @@ function createWindow() {
     })
   );
 
+  mainWindow.on("close", function (e) {
+    var choice = dialog.showMessageBoxSync(this, {
+      type: "question",
+      buttons: ["Yes", "No"],
+      title: "Confirm",
+      message: "Are you sure you want to quit?",
+      detail: "All you unsaved progress will be lost!",
+    });
+    if (choice === 1) {
+      e.preventDefault();
+    }
+  });
+
   mainWindow.on("closed", function () {
     mainWindow = null;
   });
@@ -55,21 +68,21 @@ const menuTemplate = [
   // { role: 'appMenu' }
   ...(isMac
     ? [
-        {
-          label: app.name,
-          submenu: [
-            { role: "about" },
-            { type: "separator" },
-            { role: "services" },
-            { type: "separator" },
-            { role: "hide" },
-            { role: "hideothers" },
-            { role: "unhide" },
-            { type: "separator" },
-            { role: "quit" },
-          ],
-        },
-      ]
+      {
+        label: app.name,
+        submenu: [
+          { role: "about" },
+          { type: "separator" },
+          { role: "services" },
+          { type: "separator" },
+          { role: "hide" },
+          { role: "hideothers" },
+          { role: "unhide" },
+          { type: "separator" },
+          { role: "quit" },
+        ],
+      },
+    ]
     : []),
   // { role: 'fileMenu' }
   {
@@ -117,11 +130,11 @@ const menuTemplate = [
       { role: "minimize" },
       ...(isMac
         ? [
-            { type: "separator" },
-            { role: "front" },
-            { type: "separator" },
-            { role: "window" },
-          ]
+          { type: "separator" },
+          { role: "front" },
+          { type: "separator" },
+          { role: "window" },
+        ]
         : [{ role: "close" }]),
     ],
   },

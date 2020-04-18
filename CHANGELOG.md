@@ -1,9 +1,22 @@
-## 0.1.1-alpha
+## 0.1.2-alpha
+### released on 2020-04-19g
+#### Enhancement
+*  Now a dialog is shown when the user wants to close a project that asks him to save it. (#4)
+*  A dialog asks for confirmation before closing the application (#4)
+*  Shows an error when no file location is selected on save (#4)
 
-- now directly saves the file you opened instead of trying to create a new one
-- Adding "save as" feature
-- Adding an Error Message when "Open File" is canceled
+## 0.1.1-alpha
+### released on 2020-04-18
+#### Added
+*  "Save as" feature was added
+  
+#### Enhancement
+*  Now shows an error when no file is selected to be opened
+
+#### Changed
+  *  When you opened a project it now saves it directly instead of creating a new file
 
 ## 0.1.0-alpha
+### released on 2020-04-17
+*  Release of MVP
 
-- basic functionality was added
