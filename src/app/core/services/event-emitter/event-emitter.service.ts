@@ -11,7 +11,6 @@ export class EventEmitterService {
   constructor() {}
 
   onSaveFileTrigger() {
-    console.log("EVENT EMITTED");
     this.invokeSaveFile.emit();
   }
 }

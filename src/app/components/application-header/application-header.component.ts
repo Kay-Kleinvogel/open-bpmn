@@ -31,16 +31,22 @@ export class ApplicationHeaderComponent implements OnInit {
         buttons: ["Close Project", "Cancel", "Save Project"],
         defaultId: 2,
       });
-      console.log(answer);
-      if (answer !== 1) {
-        if (answer === 2) {
+      switch (answer) {
+        case 1:
+          break;
+        case 2:
           this.eventEmitterService.onSaveFileTrigger();
+          this.fileService.resetLocalFile();
           this.router.navigateByUrl("/");
-        } else {
+          break;
+
+        default:
+          this.fileService.resetLocalFile();
           this.router.navigateByUrl("/");
-        }
+          break;
       }
     } else {
+      this.fileService.resetLocalFile();
       this.router.navigateByUrl("/");
     }
   };

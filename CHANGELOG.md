@@ -1,14 +1,16 @@
 ## 0.1.2-alpha
 #### released on 2020-04-19
-* Enchancement
+* Enhancement
   * Now a dialog is shown when the user wants to close a project that asks him to save it.
+  * A dialog asks for confirmation before closing the application
+  * Shows an error when no file location is selected on save
 
 ## 0.1.1-alpha
 #### released on 2020-04-18
 * Added
   * "Save as" feature was added
   
-* Enchancement
+* Enhancement
   * Now shows an error when no file is selected to be opened
 
 * Changed

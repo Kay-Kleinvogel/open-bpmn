@@ -35,7 +35,6 @@ export class BpmnEditorComponent implements AfterContentInit, OnDestroy {
     });
 
     ipcRenderer.on("saveFile", (sender, args) => {
-      console.log("saveFile");
       this.ngZone.run(() => this.saveFile());
     });
 

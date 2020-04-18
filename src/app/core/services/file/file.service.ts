@@ -89,12 +89,24 @@ export class FileService {
           { name: "All files", extensions: ["*"] },
         ],
       });
+      if (savePath === undefined) {
+        remote.dialog.showErrorBox(
+          "No Location Selected",
+          "File could not be saved due to an invalid location"
+        );
+      } else {
+        viewer.saveXML({ format: true }, (err, xml) => {
+          this.setCurrentPath(savePath);
+          const data = writeFileSync(savePath, xml);
+        });
+      }
     }
-    viewer.saveXML({ format: true }, (err, xml) => {
-      this.setCurrentPath(savePath);
-      const data = writeFileSync(savePath, xml);
-    });
   }
+
+  resetLocalFile = () => {
+    this.currentFile.content = null;
+    this.currentFile.path = null;
+  };
 }
 
 const defaultDiagram = `<?xml version="1.0" encoding="UTF-8"?>
