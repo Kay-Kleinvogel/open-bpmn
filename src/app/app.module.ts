@@ -21,8 +21,9 @@ import { MatListModule } from "@angular/material/list";
 import { MatIconModule } from "@angular/material/icon";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule } from "@angular/material/button";
-import { BpmnEditorComponent } from './components/bpmn-editor/bpmn-editor.component';
-import { ApplicationHeaderComponent } from './components/application-header/application-header.component';
+import { BpmnEditorComponent } from "./components/bpmn-editor/bpmn-editor.component";
+import { ApplicationHeaderComponent } from "./components/application-header/application-header.component";
+import { EventEmitterService } from "./core/services";
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -30,7 +31,12 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 }
 
 @NgModule({
-  declarations: [AppComponent, LandingComponent, BpmnEditorComponent, ApplicationHeaderComponent],
+  declarations: [
+    AppComponent,
+    LandingComponent,
+    BpmnEditorComponent,
+    ApplicationHeaderComponent,
+  ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -51,7 +57,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     HttpClientModule,
     MatIconModule,
   ],
-  providers: [],
+  providers: [EventEmitterService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
