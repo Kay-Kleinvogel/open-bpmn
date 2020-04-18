@@ -1,4 +1,17 @@
 <div class="landing-component">
+  <mat-card *ngIf="projects.length != 0">
+    <mat-list>
+      <div mat-subheader>Recent Projects</div>
+      <div mat-subheader class="small-font red-font">list not persistent</div>
+      <mat-list-item *ngFor="let project of projects">
+        <mat-icon mat-list-icon (click)="openRecent(project)" class="pointer">launch</mat-icon>
+        <div mat-line>
+          <span class="small-font">{{project.path}}</span>
+        </div>
+        <div mat-line>{{project.date | date}}</div>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
   <mat-card>
     <mat-card-header>
       <mat-card-title>Welcome to open BPMN</mat-card-title>

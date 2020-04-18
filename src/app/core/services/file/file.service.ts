@@ -58,6 +58,7 @@ export class FileService {
       this.setCurrentPath(file);
       this.setCurrentContent(this.readFile(file));
       this.storageService.addProject(this.getCurrentPath());
+      console.log(this.storageService.lastProjects)
       this.router.navigateByUrl("/edit");
     }
   }

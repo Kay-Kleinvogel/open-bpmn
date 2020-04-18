@@ -5,13 +5,17 @@ import { Injectable } from '@angular/core';
 })
 export class StorageService {
 
-  lastProjects = Array<String>();
+  lastProjects = Array();
 
   addProject(projectPath) {
+    const projectObject = {
+      path: projectPath,
+      date: new Date()
+    }
     if (this.lastProjects.length <= 4) {
-      this.lastProjects.pop();
-      this.lastProjects.unshift(projectPath);
+      this.lastProjects.unshift(projectObject);
     } else {
+      this.lastProjects.pop();
       this.lastProjects.unshift(projectPath);
     }
   }
@@ -20,7 +24,7 @@ export class StorageService {
     if (this.lastProjects[index]) {
       return this.lastProjects[index];
     } else {
-      return "";
+      return {};
     }
   }
 

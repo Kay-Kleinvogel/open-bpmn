@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { FileService } from "../../core/services";
+import { FileService, StorageService } from "../../core/services";
 
 @Component({
   selector: "app-landing",
@@ -8,11 +8,22 @@ import { FileService } from "../../core/services";
   styleUrls: ["./landing.component.scss"],
 })
 export class LandingComponent implements OnInit {
-  constructor(private fileService: FileService, private router: Router) {}
+  projects;
+  constructor(private fileService: FileService, private router: Router, private storageService: StorageService) {
+    this.projects = this.storageService.lastProjects;
+  }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  openDialog() {}
+  openDialog() { }
+
+  openRecent = (project) => {
+    this.fileService.resetLocalFile();
+    const content = this.fileService.readFile(project.path);
+    this.fileService.setCurrentPath(project.path);
+    this.fileService.setCurrentContent(content);
+    this.router.navigateByUrl("/edit");
+  }
 
   openFile = () => {
     this.fileService.openFile();

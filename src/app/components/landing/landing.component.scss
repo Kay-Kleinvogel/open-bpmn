@@ -7,5 +7,22 @@ mat-card {
   height: 100%;
   width: 100%;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+}
+
+.mat-list-icon {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+
+.small-font{
+  font-size: small;
+}
+
+.red-font{
+  color: #F44336;
+}
+
+.pointer{
+  cursor: pointer;
 }
