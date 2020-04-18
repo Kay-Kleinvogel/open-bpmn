@@ -4,12 +4,13 @@ import { readFileSync, writeFileSync } from "fs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Router } from "@angular/router";
 import * as BpmnJS from "bpmn-js/dist/bpmn-modeler.development.js";
+import { StorageService } from "../storage/storage.service";
 
 @Injectable({
   providedIn: "root",
 })
 export class FileService {
-  constructor(private _http: HttpClient, private router: Router) {}
+  constructor(private _http: HttpClient, private router: Router, private storageService: StorageService) { }
   currentFile = {
     path: null,
     content: null,
@@ -56,6 +57,7 @@ export class FileService {
       const file = files[0];
       this.setCurrentPath(file);
       this.setCurrentContent(this.readFile(file));
+      this.storageService.addProject(this.getCurrentPath());
       this.router.navigateByUrl("/edit");
     }
   }
